@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BB2445F677003F4AC2 /* RequirementDetailView.swift */; };
+		650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */; };
 		65E6FAFA2445AF590057CD44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FAF92445AF590057CD44 /* AppDelegate.swift */; };
 		65E6FAFC2445AF590057CD44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FAFB2445AF590057CD44 /* SceneDelegate.swift */; };
 		65E6FAFE2445AF590057CD44 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FAFD2445AF590057CD44 /* WelcomeView.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650819BB2445F677003F4AC2 /* RequirementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailView.swift; sourceTree = "<group>"; };
+		650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailViewModel.swift; sourceTree = "<group>"; };
 		65E6FAF62445AF590057CD44 /* CovidUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E6FAF92445AF590057CD44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E6FAFB2445AF590057CD44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650819BF2445F6F0003F4AC2 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		650819C02445F6F4003F4AC2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				65E6FB1C2445CB0A0057CD44 /* HomeViewModel.swift */,
+				650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		65E6FAED2445AF590057CD44 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +131,8 @@
 		65E6FB112445B1040057CD44 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				65E6FB1C2445CB0A0057CD44 /* HomeViewModel.swift */,
+				650819BF2445F6F0003F4AC2 /* Welcome */,
+				650819C02445F6F4003F4AC2 /* Home */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -145,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				65E6FB182445C3030057CD44 /* HomeView.swift */,
+				650819BB2445F677003F4AC2 /* RequirementDetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -221,8 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E6FAFA2445AF590057CD44 /* AppDelegate.swift in Sources */,
+				650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */,
 				65E6FB1F2445CB3B0057CD44 /* Requirement.swift in Sources */,
 				65E6FB1B2445C4220057CD44 /* UIColorExtensions.swift in Sources */,
+				650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */,
 				65E6FB152445B5DB0057CD44 /* ColorExtensions.swift in Sources */,
 				65E6FB1D2445CB0A0057CD44 /* HomeViewModel.swift in Sources */,
 				65E6FB0F2445AFF00057CD44 /* APIError.swift in Sources */,
