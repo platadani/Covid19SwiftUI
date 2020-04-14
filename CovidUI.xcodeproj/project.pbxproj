@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BB2445F677003F4AC2 /* RequirementDetailView.swift */; };
 		650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */; };
+		65423772244654D4007246F2 /* FullCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65423771244654D4007246F2 /* FullCardView.swift */; };
+		6542377424465512007246F2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542377324465512007246F2 /* CardView.swift */; };
+		65423776244655B4007246F2 /* CountriesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65423775244655B4007246F2 /* CountriesCardView.swift */; };
 		65E6FAFA2445AF590057CD44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FAF92445AF590057CD44 /* AppDelegate.swift */; };
 		65E6FAFC2445AF590057CD44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FAFB2445AF590057CD44 /* SceneDelegate.swift */; };
 		65E6FAFE2445AF590057CD44 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FAFD2445AF590057CD44 /* WelcomeView.swift */; };
@@ -26,6 +29,9 @@
 /* Begin PBXFileReference section */
 		650819BB2445F677003F4AC2 /* RequirementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailView.swift; sourceTree = "<group>"; };
 		650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailViewModel.swift; sourceTree = "<group>"; };
+		65423771244654D4007246F2 /* FullCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCardView.swift; sourceTree = "<group>"; };
+		6542377324465512007246F2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		65423775244655B4007246F2 /* CountriesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCardView.swift; sourceTree = "<group>"; };
 		65E6FAF62445AF590057CD44 /* CovidUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E6FAF92445AF590057CD44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E6FAFB2445AF590057CD44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,16 @@
 				650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		65423770244654C1007246F2 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				65423771244654D4007246F2 /* FullCardView.swift */,
+				6542377324465512007246F2 /* CardView.swift */,
+				65423775244655B4007246F2 /* CountriesCardView.swift */,
+			);
+			path = CardViews;
 			sourceTree = "<group>";
 		};
 		65E6FAED2445AF590057CD44 = {
@@ -165,6 +181,7 @@
 		65E6FB172445C2EC0057CD44 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				65423770244654C1007246F2 /* CardViews */,
 				65E6FB182445C3030057CD44 /* HomeView.swift */,
 				650819BB2445F677003F4AC2 /* RequirementDetailView.swift */,
 			);
@@ -247,12 +264,15 @@
 				65E6FB1F2445CB3B0057CD44 /* Requirement.swift in Sources */,
 				65E6FB1B2445C4220057CD44 /* UIColorExtensions.swift in Sources */,
 				650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */,
+				65423772244654D4007246F2 /* FullCardView.swift in Sources */,
 				65E6FB152445B5DB0057CD44 /* ColorExtensions.swift in Sources */,
+				6542377424465512007246F2 /* CardView.swift in Sources */,
 				65E6FB1D2445CB0A0057CD44 /* HomeViewModel.swift in Sources */,
 				65E6FB0F2445AFF00057CD44 /* APIError.swift in Sources */,
 				65E6FB192445C3030057CD44 /* HomeView.swift in Sources */,
 				65E6FAFC2445AF590057CD44 /* SceneDelegate.swift in Sources */,
 				65E6FAFE2445AF590057CD44 /* WelcomeView.swift in Sources */,
+				65423776244655B4007246F2 /* CountriesCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
