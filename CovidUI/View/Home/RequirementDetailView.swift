@@ -30,11 +30,15 @@ struct RequirementDetailView: View {
                     }
                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 60, alignment: .center)
                 VStack {
+                    Image(viewModel.requirement.fullImage)
+                        .resizable()
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .scaledToFill()
                     Text(viewModel.requirement.textTitle)
                         .font(Font.system(size: 25))
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
+                        .frame(maxWidth: .infinity, maxHeight: 70, alignment: .center)
                         .padding()
                     Text(viewModel.requirement.description)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

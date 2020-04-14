@@ -11,6 +11,8 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     @State var showRequirementDetail: Bool = false
+    @State var showStayHomeDetail: Bool = false
+
     @State var requirementSelected: Requirement?
 
     init() {
@@ -44,6 +46,12 @@ struct HomeView: View {
                             }.padding([.leading, .trailing], 10)
                     }.frame(height: 120)
                     FullCardView()
+                    .onTapGesture {
+                        self.showStayHomeDetail.toggle()
+                    }
+                    .sheet(isPresented: self.$showStayHomeDetail) {
+                        RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: .stayHome))
+                    }
                 }
             }
         }.navigationBarTitle("Covid-19 Info", displayMode: .inline)
@@ -93,17 +101,14 @@ struct FullCardView: View {
                         .foregroundColor(.white)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
                         .padding(.leading, 15)
-                    Button(action: {
-
-                    }) {
-                        Text("Know more")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                            .padding(5)
-                            .background(Color(hex: "2C3ECC"))
+                    Text("Know more")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                        .padding(5)
+                        .background(Color(hex: "2C3ECC"))
                         .cornerRadius(5)
-                    }.padding()
+                        .padding()
                 }
                 VStack {
                     Image("g_msk")
