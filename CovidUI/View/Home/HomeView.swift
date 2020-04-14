@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     @State var showRequirementDetail: Bool = false
+    @State var requirementSelected: Requirement?
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor().from(hexString: "23273C")]
@@ -19,7 +20,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            Color(hex: "F8F8FC").edgesIgnoringSafeArea(.all)
+            Color(hex: "F4F6FC").edgesIgnoringSafeArea(.all)
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
                     Text("Requirements")
@@ -33,18 +34,19 @@ struct HomeView: View {
                             ForEach(viewModel.requeriments, id: \.self) { req in
                                 CardView(color: req.color, text: req.text, image: req.image)
                                     .onTapGesture {
+                                        self.requirementSelected = req
                                         self.showRequirementDetail.toggle()
                                     }
                                     .sheet(isPresented: self.$showRequirementDetail) {
-                                        RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: req))
+                                        RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: self.requirementSelected!))
                                     }
                                 }
-                            }
+                            }.padding([.leading, .trailing], 10)
                     }.frame(height: 120)
                     FullCardView()
                 }
             }
-        }.navigationBarTitle("Covid-19 Info")
+        }.navigationBarTitle("Covid-19 Info", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
     }
 }
@@ -76,7 +78,7 @@ struct CardView: View {
 
         }.frame(width: 150, height: 120, alignment: .center)
         .cornerRadius(15)
-            .padding(.leading, 10)
+            .padding([.leading, .trailing], 5)
     }
 }
 
@@ -106,7 +108,7 @@ struct FullCardView: View {
                 VStack {
                     Image("g_msk")
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .bottom)
-                    .padding(EdgeInsets(top: 65, leading: 0, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top: 65, leading: 0, bottom: 0, trailing: 0))
                 }
             }
 

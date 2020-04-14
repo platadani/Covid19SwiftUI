@@ -48,9 +48,9 @@ enum Requirement {
 
     var description: String {
         switch self {
-        case .mask: return "Cover your nose and mouth with disposable tissue or handkerchief. \n While coughing or sneezing cover your nose and mouth with handkerchief."
+        case .mask: return "Cover your nose and mouth with disposable tissue or handkerchief. \nWhile coughing or sneezing cover your nose and mouth with handkerchief."
         case .alcohol: return "Wash your hands often with soap and water for at least 20 seconds."
-        case .gloves: return "Avoid touching your eyes, nose and mouth if your hands aren't clean. \n You should wear gloves especially when you go out"
+        case .gloves: return "Avoid touching your eyes, nose and mouth if your hands aren't clean. \nYou should wear gloves especially when you go out"
         }
     }
 
