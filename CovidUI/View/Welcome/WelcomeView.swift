@@ -10,12 +10,14 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        ZStack {
-            Color(hex: "4F62ED").edgesIgnoringSafeArea(.all)
-            VStack {
-                WelcomeImage()
-                TitleAndSubtitleView()
-                WelcomeButton()
+        NavigationView {
+            ZStack {
+                Color(hex: "4F62ED").edgesIgnoringSafeArea(.all)
+                VStack {
+                    WelcomeImage()
+                    TitleAndSubtitleView()
+                    WelcomeButton()
+                }
             }
         }
     }
@@ -56,19 +58,22 @@ struct TitleAndSubtitleView: View {
 }
 
 struct WelcomeButton: View {
+    @State var showHomeView: Bool = false
     var body: some View {
-        Button(action: {
-
-        }) {
-            Text("Let's Go")
-                .fontWeight(.black)
-                .font(Font.system(size: 20))
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding()
-                .background(Color.white)
-                .foregroundColor(Color(hex: "4F62ED"))
-                .cornerRadius(10)
-        }.padding(EdgeInsets(top: 100, leading: 40, bottom: 40, trailing: 40))
+        NavigationLink(destination: HomeView(), isActive: $showHomeView) {
+            Button(action: {
+                self.showHomeView.toggle()
+            }) {
+                Text("Let's Go")
+                    .fontWeight(.black)
+                    .font(Font.system(size: 20))
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .background(Color.white)
+                    .foregroundColor(Color(hex: "4F62ED"))
+                    .cornerRadius(10)
+            }.padding(EdgeInsets(top: 100, leading: 40, bottom: 40, trailing: 40))
+        }
     }
 }
 
