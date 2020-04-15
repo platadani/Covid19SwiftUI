@@ -18,7 +18,7 @@ struct WelcomeView: View {
                     TitleAndSubtitleView()
                     WelcomeButton()
                 }
-            }
+            }.navigationBarHidden(true)
         }
     }
 }

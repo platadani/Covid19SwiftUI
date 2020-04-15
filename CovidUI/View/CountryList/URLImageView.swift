@@ -13,7 +13,7 @@ struct URLImageView: View {
 
     var placeholder: Image
 
-    init(url: String, placeholder: Image = Image("mask")) {
+    init(url: String, placeholder: Image = Image("")) {
         self.placeholder = placeholder
         self.imageLoader.load(url: url)
     }

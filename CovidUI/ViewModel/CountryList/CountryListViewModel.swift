@@ -22,6 +22,10 @@ final class CountryListViewModel: ObservableObject {
         getCountries()
     }
 
+    init(countries: [Country]) {
+        self.countries = countries
+    }
+
     func getCountries() {
         provider
             .getCountries()

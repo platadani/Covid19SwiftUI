@@ -25,7 +25,7 @@ enum Requirement {
 
     var color: String {
         switch self {
-        case .mask: return "F6D06F"
+        case .mask: return "388A7B"
         case .alcohol: return "4F62ED"
         case .gloves: return "F17F8B"
         case .stayHome: return "3C4FE9"

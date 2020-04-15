@@ -48,4 +48,8 @@ final class CountryChartViewModel: ObservableObject {
             }
             .store(in: &publishers)
     }
+
+    func openURLInSafari() {
+        UIApplication.shared.open(URL(string: "https://covid19api.com/")!, options: [:], completionHandler: nil)
+    }
 }

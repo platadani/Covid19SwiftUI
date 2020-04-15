@@ -10,6 +10,7 @@ import SwiftUICharts
 import SwiftUI
 
 struct CountryChartView: View {
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: CountryChartViewModel = CountryChartViewModel(country: Country(flagImage: "", name: "", slug: ""))
 
     init(viewModel: CountryChartViewModel) {
@@ -17,24 +18,82 @@ struct CountryChartView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(viewModel.country.name)
+        ZStack {
+            Color(hex: "388A7B").edgesIgnoringSafeArea(.all)
             VStack {
-                Picker(selection: Binding<Int>(
-                    get: { self.viewModel.statusSelected },
-                    set: { self.viewModel.statusSelected = $0 }), label: Text("Select")) {
-                    ForEach(0..<viewModel.statusData.count) { index in
-                        Text(self.viewModel.statusData[index].rawValue.capitalized).tag(index)
-                    }
-                }.pickerStyle(SegmentedPickerStyle())
-                .padding([.leading, .trailing], 10)
-            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
-            LineView(data: viewModel.data.map { Double($0.cases) }, title: "", legend: "")
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: 300, alignment: .center)
-                .padding([.leading, .trailing], 10)
-            Spacer()
-        }
+                VStack {
+                    HStack {
+                        URLImageView(url: viewModel.country.flagImage)
+                            .scaledToFit()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .padding(10)
+                        Text(viewModel.country.name)
+                            .font(Font.system(size: 20))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .center)
 
+                    VStack {
+                        Picker(selection: Binding<Int>(
+                            get: { self.viewModel.statusSelected },
+                            set: { self.viewModel.statusSelected = $0 }), label: Text("Select")) {
+                            ForEach(0..<viewModel.statusData.count) { index in
+                                Text(self.viewModel.statusData[index].rawValue.capitalized).tag(index)
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                            .padding([.leading, .trailing, .bottom], 10)
+                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 30, alignment: .center)
+
+                }
+                VStack {
+                    VStack {
+                        HStack {
+                            Text(viewModel.statusData[viewModel.statusSelected].titleText)
+                            .font(Font.system(size: 20))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(hex:"2A685D"))
+                                .padding([.leading, .bottom], 40)
+                                .padding(.top, 60)
+                            Spacer()
+                        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
+                        LineView(data: viewModel.data.map { Double($0.cases) }, title: nil, legend: nil)
+                            .padding([.leading, .trailing], 10)
+                        Spacer()
+                    }
+                    Spacer()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    Button(action: {
+                        self.viewModel.openURLInSafari()
+                    }) {
+                        Image("covidapi-logo")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color(hex: "388A7B"))
+                        .frame(width: 90, height: 30, alignment: .center)
+                        .padding(.bottom, 40)
+                    }
+                }
+                .background(Color.white)
+                .cornerRadius(20)
+            .offset(x: 0, y: 20)
+            }
+
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Image("back-btn")
+                    .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                        .foregroundColor(Color(hex: "8AEAD9"))
+                    }
+                }
+            )
+        .navigationBarTitle("", displayMode: .inline)
+            .navigationBarColor(UIColor().from(hexString: "388A7B"))
     }
 }
 
@@ -43,6 +102,8 @@ struct CountryChartView_Previews: PreviewProvider {
                                                         CountryDataResponse(cases: 1500, date: Date())], country: Country(flagImage: "e", name: "Spain", slug: "spain"))
 
     static var previews: some View {
-        CountryChartView(viewModel: viewModel)
+        NavigationView {
+            CountryChartView(viewModel: viewModel)
+        }
     }
 }

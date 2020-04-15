@@ -30,8 +30,8 @@ class ServerManager {
     }
 
     func request(for endpoint: String, method: Method) -> URLRequest {
-        guard let url = URL(string: endpoint)
-            else { preconditionFailure("Bad URL") }
+        guard let url = URL(string: endpoint.folding(options: .diacriticInsensitive, locale: .current))
+            else { preconditionFailure("Bad URL \(endpoint)") }
 
         var request = URLRequest(url: url)
         request.httpMethod = "\(method)"
