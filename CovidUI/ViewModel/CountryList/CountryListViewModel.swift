@@ -27,7 +27,7 @@ final class CountryListViewModel: ObservableObject {
             .getCountries()
             .replaceError(with: [])
             .map { $0.map { Country(flagImage: "https://raw.githubusercontent.com/hjnilsson/country-flags/master/png1000px/\($0.iso2.lowercased()).png",
-                                    name: $0.name) }
+                name: $0.name, slug: $0.slug) }
                      .sorted(by: { $0.name < $1.name }) }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { error in

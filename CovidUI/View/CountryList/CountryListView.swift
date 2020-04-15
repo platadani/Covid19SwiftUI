@@ -17,7 +17,9 @@ struct CountryListView: View {
                     URLImageView(url: country.flagImage)
                         .scaledToFit()
                         .frame(width: 20, height: 20, alignment: .center)
-                    Text(country.name)
+                    NavigationLink(destination: CountryChartView(viewModel: CountryChartViewModel(country: country))) {
+                        Text(country.name)
+                    }
                 }
             }
         }

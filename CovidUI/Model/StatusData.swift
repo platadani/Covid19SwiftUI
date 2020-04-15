@@ -1,5 +1,5 @@
 //
-//  Country.swift
+//  StatusData.swift
 //  CovidUI
 //
 //  Created by Daniel Plata on 15/04/2020.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Country: Identifiable {
-    var id = UUID()
-    let flagImage: String
-    let name: String
-    let slug: String
+enum StatusData: String {
+    case confirmed = "confirmed"
+    case recovered = "recovered"
+    case deaths = "deaths"
 }
