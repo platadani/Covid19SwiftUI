@@ -12,6 +12,7 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     @State var showRequirementDetail: Bool = false
     @State var showStayHomeDetail: Bool = false
+    @State var showCountryList: Bool = false
 
     @State var requirementSelected: Requirement?
 
@@ -53,7 +54,9 @@ struct HomeView: View {
                     .sheet(isPresented: self.$showStayHomeDetail) {
                         RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: .stayHome))
                     }
-                    CountriesCardView()
+                    NavigationLink(destination: CountryListView(), isActive: self.$showCountryList) {
+                        CountriesCardView()
+                    }
                 }
             }
         }.navigationBarTitle("Covid-19 Info", displayMode: .inline)
