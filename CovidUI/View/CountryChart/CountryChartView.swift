@@ -57,61 +57,52 @@ struct CountryChartView: View {
                                 Text(self.viewModel.statusData[index].rawValue.capitalized).tag(index)
                             }
                         }.pickerStyle(SegmentedPickerStyle())
-                            .padding([.leading, .trailing, .bottom], 10)
+                        .padding([.leading, .trailing, .bottom], 10)
                     }.frame(minHeight: 0, maxHeight: 30, alignment: .center)
-
                 }
                 VStack {
                     VStack {
                         HStack {
                             Text(viewModel.statusData[viewModel.statusSelected].titleText)
-                            .font(Font.system(size: 20))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(hex:"2A685D"))
+                                .font(Font.system(size: 20))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(hex:"2A685D"))
                                 .padding([.leading, .bottom], 40)
                                 .padding(.top, 30)
                             Spacer()
                         }.frame(minHeight: 0, maxHeight: 70, alignment: .center)
-                            .padding([.top, .bottom], 40)
+                        .padding([.top, .bottom], 40)
                         LineView(data: viewModel.data.map { Double($0.cases) }, title: nil, legend: nil)
                             .padding([.top, .bottom], 40)
                             .padding([.leading, .trailing], 10)
                         Spacer()
                     }
                     Spacer()
-                    .frame(minHeight: 0, maxHeight: .infinity, alignment: .center)
+                        .frame(minHeight: 0, maxHeight: .infinity, alignment: .center)
                     Button(action: {
                         self.viewModel.openURLInSafari()
                     }) {
                         Image("covidapi-logo")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color(hex: "388A7B"))
-                        .frame(width: 90, height: 30, alignment: .center)
-                        .padding(.bottom, 40)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color(hex: "388A7B"))
+                            .frame(width: 90, height: 30, alignment: .center)
+                            .padding(.bottom, 40)
                     }
-                }
-                .background(Color.white)
+                }.background(Color.white)
                 .cornerRadius(20)
-            .offset(x: 0, y: 20)
+                .offset(x: 0, y: 20)
             }
-
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                HStack {
-                    Image("back-btn")
-                    .resizable()
-                        .frame(width: 30, height: 30, alignment: .center)
-                        .foregroundColor(Color(hex: "8AEAD9"))
-                    }
-                }
-            )
+                BackButton(color: Color(hex: "8AEAD9"))
+            })
         .navigationBarTitle("", displayMode: .inline)
-            .navigationBarColor(UIColor().from(hexString: "388A7B"))
+        .navigationBarColor(UIColor().from(hexString: "388A7B"))
     }
 }
 

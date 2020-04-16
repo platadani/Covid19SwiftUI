@@ -17,13 +17,8 @@ struct HomeView: View {
     @State var requirementSelected: Requirement?
 
     init() {
-        // this is not the same as manipulating the proxy directly
         let appearance = UINavigationBarAppearance()
-
-        // this overrides everything you have set up earlier.
         appearance.configureWithTransparentBackground()
-        //appearance.backgroundColor = .white
-
         appearance.largeTitleTextAttributes = [
             .font : UIFont.systemFont(ofSize: 20, weight: .bold),
             NSAttributedString.Key.foregroundColor : UIColor().from(hexString: "222C44"),
@@ -33,7 +28,6 @@ struct HomeView: View {
             .font : UIFont.systemFont(ofSize: 20, weight: .bold),
             NSAttributedString.Key.foregroundColor : UIColor().from(hexString: "222C44")
         ]
-
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().tintColor = UIColor().from(hexString: "222C44")
@@ -44,6 +38,9 @@ struct HomeView: View {
             Color(hex: "F4F6FC").edgesIgnoringSafeArea(.all)
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
+                    NavigationLink(destination: LazyView { CountryListView(viewModel: CountryListViewModel()) }) {
+                        CountriesCardView()
+                    }
                     Text("Requirements")
                         .font(Font.system(size: 20))
                         .fontWeight(.bold)
@@ -66,20 +63,17 @@ struct HomeView: View {
                             }.padding([.leading, .trailing], 10)
                     }.frame(height: 120)
                     FullCardView()
-                    .onTapGesture {
-                        self.showStayHomeDetail.toggle()
-                    }
-                    .sheet(isPresented: self.$showStayHomeDetail) {
-                        RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: .stayHome))
-                    }
-                    NavigationLink(destination: LazyView { CountryListView(viewModel: CountryListViewModel()) }) {
-                        CountriesCardView()
-                    }
+                        .onTapGesture {
+                            self.showStayHomeDetail.toggle()
+                        }
+                        .sheet(isPresented: self.$showStayHomeDetail) {
+                            RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: .stayHome))
+                        }
                 }
             }
         }.navigationBarTitle("Covid-19 Info", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-            .navigationBarColor(UIColor().from(hexString: "F4F6FC"))
+        .navigationBarColor(UIColor().from(hexString: "F4F6FC"))
     }
 }
 

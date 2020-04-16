@@ -21,9 +21,9 @@ struct CountryCardView: View {
                     HStack {
                         Spacer()
                         Image("shadow")
-                        .resizable()
-                        .frame(width: 150, height: 150, alignment: .trailing)
-                        .offset(x: 10, y: 20)
+                            .resizable()
+                            .frame(width: 150, height: 150, alignment: .trailing)
+                            .offset(x: 10, y: 20)
                     }
                     HStack {
                         HStack {
@@ -40,8 +40,7 @@ struct CountryCardView: View {
                     }
                 }
             }
-        }
-        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 150, alignment: .center)
+        }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 150, alignment: .center)
         .cornerRadius(15)
         .padding(.leading, 3)
         .padding(.trailing, 0)

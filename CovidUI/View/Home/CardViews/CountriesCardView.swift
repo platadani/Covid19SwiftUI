@@ -16,8 +16,8 @@ struct CountriesCardView: View {
                 ZStack {
                     HStack {
                         Image("virus")
-                        .resizable()
-                        .scaledToFill()
+                            .resizable()
+                            .scaledToFill()
                             .frame(minWidth: 0, maxWidth: 150, alignment: .leading)
                             .padding(EdgeInsets(top: 60, leading: 0, bottom: 0, trailing: 66))
                             .offset(x: -40, y: 0)
@@ -38,21 +38,20 @@ struct CountriesCardView: View {
                                 .foregroundColor(.white)
                                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .leading)
                                 .padding(.leading, 15)
-
                         }
                         Image("right-arrow")
-                        .resizable()
-                        .scaledToFill()
+                            .resizable()
+                            .scaledToFill()
                             .frame(width: 15, height: 15, alignment: .center)
-                        .foregroundColor(.white)
-                        .padding(.trailing, 30)
+                            .foregroundColor(.white)
+                            .padding(.trailing, 30)
                     }
                 }
             }
-        }
-        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 150, alignment: .center)
+        }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 150, alignment: .center)
         .cornerRadius(15)
         .padding(.leading, 15)
+        .padding(.top, 15)
         .padding(.trailing, -15)
 
     }

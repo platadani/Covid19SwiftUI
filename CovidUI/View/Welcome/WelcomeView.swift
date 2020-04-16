@@ -31,10 +31,10 @@ struct WelcomeImage: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding(EdgeInsets(top: 10, leading: 60, bottom: 10, trailing: 60))
             Image("mask-man")
-            .resizable()
-            .scaledToFit()
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .padding(EdgeInsets(top: 10, leading: 60, bottom: 10, trailing: 60))
+                .resizable()
+                .scaledToFit()
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(EdgeInsets(top: 10, leading: 60, bottom: 10, trailing: 60))
         }
     }
 }

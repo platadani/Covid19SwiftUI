@@ -29,22 +29,15 @@ struct CountryListView: View {
             }, id: \.id) { country in
                 CountryListRow(country: country)
             }
-        }
-        .navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                HStack {
-                    Image("back-btn")
-                    .resizable()
-                        .frame(width: 30, height: 30, alignment: .center)
-                        .foregroundColor(.black)
-                    }
-                }
-            )
+                BackButton(color: .black)
+            })
         .navigationBarTitle("Select a country", displayMode: .inline)
-            .navigationBarColor(.white)
+        .navigationBarColor(.white)
     }
 }
 
@@ -54,13 +47,12 @@ struct CountryListRow: View {
     var body: some View {
         ZStack {
             CountryCardView(countryName: country.name, flagImage: country.flagImage)
-            .padding(.bottom, 10)
+                .padding(.bottom, 10)
             NavigationLink(destination: LazyView { CountryChartView(country: self.country) }) {
                 EmptyView()
             }.frame(width: 0)
             .opacity(0)
         }
-
     }
 }
 

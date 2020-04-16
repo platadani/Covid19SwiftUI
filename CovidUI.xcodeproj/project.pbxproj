@@ -47,6 +47,7 @@
 		65E6FB1D2445CB0A0057CD44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FB1C2445CB0A0057CD44 /* HomeViewModel.swift */; };
 		65E6FB1F2445CB3B0057CD44 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FB1E2445CB3B0057CD44 /* Requirement.swift */; };
 		65EB65CB2448E38600F36E50 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB65CA2448E38600F36E50 /* SearchBar.swift */; };
+		65EB65CF2448E77D00F36E50 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB65CE2448E77D00F36E50 /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		65E6FB1C2445CB0A0057CD44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		65E6FB1E2445CB3B0057CD44 /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
 		65EB65CA2448E38600F36E50 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		65EB65CE2448E77D00F36E50 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +107,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		650819BF2445F6F0003F4AC2 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Welcome;
-			sourceTree = "<group>";
-		};
 		650819C02445F6F4003F4AC2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +121,7 @@
 			children = (
 				651D347224487A1B002D716B /* LazyView.swift */,
 				65EB65CA2448E38600F36E50 /* SearchBar.swift */,
+				65EB65CE2448E77D00F36E50 /* BackButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -281,7 +277,6 @@
 		65E6FB112445B1040057CD44 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				650819BF2445F6F0003F4AC2 /* Welcome */,
 				650819C02445F6F4003F4AC2 /* Home */,
 				65C3CABD2446F8CC0001C100 /* CountryList */,
 				65C3CAD52447096A0001C100 /* CountryChart */,
@@ -434,6 +429,7 @@
 				65C3CACC244701B10001C100 /* ImageLoader.swift in Sources */,
 				65E6FB1D2445CB0A0057CD44 /* HomeViewModel.swift in Sources */,
 				65E6FB0F2445AFF00057CD44 /* APIError.swift in Sources */,
+				65EB65CF2448E77D00F36E50 /* BackButton.swift in Sources */,
 				65CC3795244729A500A49690 /* ViewExtensions.swift in Sources */,
 				65E6FB192445C3030057CD44 /* HomeView.swift in Sources */,
 				65E6FAFC2445AF590057CD44 /* SceneDelegate.swift in Sources */,

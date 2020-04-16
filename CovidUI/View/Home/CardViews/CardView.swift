@@ -34,7 +34,7 @@ struct CardView: View {
             }
         }.frame(width: 150, height: 120, alignment: .center)
         .cornerRadius(15)
-            .padding([.leading, .trailing], 5)
+        .padding([.leading, .trailing], 5)
     }
 }
 
