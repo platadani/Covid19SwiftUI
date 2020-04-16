@@ -36,6 +36,9 @@ class ServerManager {
         var request = URLRequest(url: url)
         request.httpMethod = "\(method)"
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
+
+        print("🌍🌍🌍🌍🌍🌍🌍🌍🌍")
+        print("REQUEST: [\(method.rawValue)] \(endpoint)")
         return request
     }
 }

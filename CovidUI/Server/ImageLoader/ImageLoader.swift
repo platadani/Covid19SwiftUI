@@ -10,19 +10,39 @@ import SwiftUI
 import Combine
 
 class ImageLoader: ObservableObject {
-    @Published var downloadedImage: UIImage?
-    //let didChange = PassthroughSubject<ImageLoader?, Never>()
+    @Published var image: UIImage?
+    private let url: URL
+    private var cancellable: AnyCancellable?
+    private var cache: ImageCache?
 
-    func load(url: String) {
-        guard let imageURL = URL(string: url) else {
-            fatalError("ImageURL is not correct!")
+    init(url: URL, cache: ImageCache? = nil) {
+        self.url = url
+        self.cache = cache
+    }
+
+    deinit {
+        cancellable?.cancel()
+    }
+
+    func load() {
+        if let image = cache?[url] {
+            self.image = image
+            return
         }
 
-        URLSession.shared.dataTask(with: imageURL) { data, response, error in
-            guard let data = data else { return self.downloadedImage = nil }
-            DispatchQueue.main.async {
-                self.downloadedImage = UIImage(data: data)
-            }
-        }.resume()
+        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .map { UIImage(data: $0.data) }
+            .replaceError(with: nil)
+            .handleEvents(receiveOutput: { [weak self] in self?.cache($0) })
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.image, on: self)
+    }
+
+    private func cache(_ image: UIImage?) {
+        image.map { cache?[url] = $0 }
+    }
+
+    func cancel() {
+        cancellable?.cancel()
     }
 }

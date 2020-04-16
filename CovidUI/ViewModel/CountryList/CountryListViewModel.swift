@@ -15,6 +15,7 @@ final class CountryListViewModel: ObservableObject {
     private var publishers = [AnyCancellable]()
 
     deinit {
+        publishers.forEach { $0.cancel() }
     }
 
     init() {
@@ -24,6 +25,7 @@ final class CountryListViewModel: ObservableObject {
 
     init(countries: [Country]) {
         self.countries = countries
+        getCountries()
     }
 
     func getCountries() {
@@ -35,7 +37,6 @@ final class CountryListViewModel: ObservableObject {
                      .sorted(by: { $0.name < $1.name }) }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { error in
-                print(error)
             }) { value in
                 self.countries = value
             }

@@ -16,6 +16,9 @@ final class CountryChartViewModel: ObservableObject {
             getData()
         }
     }
+
+    @Published var totalCountTitle: String
+
     var country: Country!
     var provider: CountryDataProvider!
     private var publishers = [AnyCancellable]()
@@ -23,15 +26,18 @@ final class CountryChartViewModel: ObservableObject {
     var statusData: [StatusData] = [.confirmed, .recovered, .deaths]
 
     deinit {
+        publishers.forEach { $0.cancel() }
     }
 
     init(country: Country) {
         self.country = country
+        totalCountTitle = ""
         provider = CountryDataServer()
         getData()
     }
 
     init(data: [CountryDataResponse], country: Country) {
+        totalCountTitle = ""
         self.data = data
         self.country = country
     }
@@ -40,12 +46,17 @@ final class CountryChartViewModel: ObservableObject {
         provider
             .getData(country: country.slug, status: statusData[statusSelected])
             .replaceError(with: [])
+            .map { $0.filter { $0.cases > 0 } }
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { error in
-                print(error)
+            .sink(receiveCompletion: { value in
             }) { value in
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .decimal
+                let formattedNumber = numberFormatter.string(from: NSNumber(value:value.last?.cases ?? 0))
+                self.totalCountTitle = formattedNumber ?? ""
                 self.data = value
             }
+
             .store(in: &publishers)
     }
 

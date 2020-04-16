@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BB2445F677003F4AC2 /* RequirementDetailView.swift */; };
 		650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */; };
+		651D347324487A1B002D716B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D347224487A1B002D716B /* LazyView.swift */; };
 		65423772244654D4007246F2 /* FullCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65423771244654D4007246F2 /* FullCardView.swift */; };
 		6542377424465512007246F2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542377324465512007246F2 /* CardView.swift */; };
 		65423776244655B4007246F2 /* CountriesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65423775244655B4007246F2 /* CountriesCardView.swift */; };
+		6574F93324485DEE005F31F6 /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F93224485DEE005F31F6 /* TemporaryImageCache.swift */; };
+		6574F93524485E62005F31F6 /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F93424485E62005F31F6 /* ImageCacheKey.swift */; };
 		65C3CABC2446F87E0001C100 /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CABB2446F87E0001C100 /* CountryListView.swift */; };
 		65C3CABF2446F8DE0001C100 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CABE2446F8DE0001C100 /* CountryListViewModel.swift */; };
 		65C3CAC12446F8FD0001C100 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAC02446F8FD0001C100 /* Country.swift */; };
@@ -19,7 +22,7 @@
 		65C3CAC72446FC310001C100 /* CountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAC62446FC310001C100 /* CountriesResponse.swift */; };
 		65C3CAC92446FCD10001C100 /* CountriesServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAC82446FCD10001C100 /* CountriesServer.swift */; };
 		65C3CACC244701B10001C100 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CACB244701B10001C100 /* ImageLoader.swift */; };
-		65C3CACE244702120001C100 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CACD244702120001C100 /* URLImageView.swift */; };
+		65C3CACE244702120001C100 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CACD244702120001C100 /* AsyncImage.swift */; };
 		65C3CAD1244708DC0001C100 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 65C3CAD0244708DC0001C100 /* SwiftUICharts */; };
 		65C3CAD4244708F30001C100 /* CountryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAD3244708F30001C100 /* CountryChartView.swift */; };
 		65C3CAD72447097A0001C100 /* CountryChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAD62447097A0001C100 /* CountryChartViewModel.swift */; };
@@ -48,9 +51,12 @@
 /* Begin PBXFileReference section */
 		650819BB2445F677003F4AC2 /* RequirementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailView.swift; sourceTree = "<group>"; };
 		650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailViewModel.swift; sourceTree = "<group>"; };
+		651D347224487A1B002D716B /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		65423771244654D4007246F2 /* FullCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCardView.swift; sourceTree = "<group>"; };
 		6542377324465512007246F2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		65423775244655B4007246F2 /* CountriesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCardView.swift; sourceTree = "<group>"; };
+		6574F93224485DEE005F31F6 /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
+		6574F93424485E62005F31F6 /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
 		65C3CABB2446F87E0001C100 /* CountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListView.swift; sourceTree = "<group>"; };
 		65C3CABE2446F8DE0001C100 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		65C3CAC02446F8FD0001C100 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -58,7 +64,7 @@
 		65C3CAC62446FC310001C100 /* CountriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResponse.swift; sourceTree = "<group>"; };
 		65C3CAC82446FCD10001C100 /* CountriesServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServer.swift; sourceTree = "<group>"; };
 		65C3CACB244701B10001C100 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		65C3CACD244702120001C100 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		65C3CACD244702120001C100 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		65C3CAD3244708F30001C100 /* CountryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryChartView.swift; sourceTree = "<group>"; };
 		65C3CAD62447097A0001C100 /* CountryChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryChartViewModel.swift; sourceTree = "<group>"; };
 		65C3CAD824470A890001C100 /* CountryDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataResponse.swift; sourceTree = "<group>"; };
@@ -113,6 +119,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		651D347124487A0E002D716B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				651D347224487A1B002D716B /* LazyView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		65423770244654C1007246F2 /* CardViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				65C3CABB2446F87E0001C100 /* CountryListView.swift */,
-				65C3CACD244702120001C100 /* URLImageView.swift */,
+				65C3CACD244702120001C100 /* AsyncImage.swift */,
 				65CC378F24471A0900A49690 /* CountryCardView.swift */,
 			);
 			path = CountryList;
@@ -163,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				65C3CACB244701B10001C100 /* ImageLoader.swift */,
+				6574F93224485DEE005F31F6 /* TemporaryImageCache.swift */,
+				6574F93424485E62005F31F6 /* ImageCacheKey.swift */,
 			);
 			path = ImageLoader;
 			sourceTree = "<group>";
@@ -250,6 +266,7 @@
 		65E6FB102445B0FF0057CD44 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				651D347124487A0E002D716B /* Common */,
 				65E6FB162445C1F40057CD44 /* Welcome */,
 				65E6FB172445C2EC0057CD44 /* Home */,
 				65C3CABA2446F8690001C100 /* CountryList */,
@@ -391,12 +408,14 @@
 				650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */,
 				65C3CADF24470B320001C100 /* ServerManager.swift in Sources */,
 				65E6FB1F2445CB3B0057CD44 /* Requirement.swift in Sources */,
-				65C3CACE244702120001C100 /* URLImageView.swift in Sources */,
+				65C3CACE244702120001C100 /* AsyncImage.swift in Sources */,
 				65C3CAD4244708F30001C100 /* CountryChartView.swift in Sources */,
 				65E6FB1B2445C4220057CD44 /* UIColorExtensions.swift in Sources */,
 				650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */,
 				65C3CABC2446F87E0001C100 /* CountryListView.swift in Sources */,
 				65C3CAC42446FBFC0001C100 /* CountriesProvider.swift in Sources */,
+				6574F93524485E62005F31F6 /* ImageCacheKey.swift in Sources */,
+				651D347324487A1B002D716B /* LazyView.swift in Sources */,
 				65423772244654D4007246F2 /* FullCardView.swift in Sources */,
 				65C3CAC72446FC310001C100 /* CountriesResponse.swift in Sources */,
 				65E6FB152445B5DB0057CD44 /* ColorExtensions.swift in Sources */,
@@ -415,6 +434,7 @@
 				65E6FB192445C3030057CD44 /* HomeView.swift in Sources */,
 				65E6FAFC2445AF590057CD44 /* SceneDelegate.swift in Sources */,
 				65E6FAFE2445AF590057CD44 /* WelcomeView.swift in Sources */,
+				6574F93324485DEE005F31F6 /* TemporaryImageCache.swift in Sources */,
 				65CC37932447299300A49690 /* NavigationBarModifier.swift in Sources */,
 				65423776244655B4007246F2 /* CountriesCardView.swift in Sources */,
 			);

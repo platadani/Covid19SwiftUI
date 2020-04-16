@@ -11,10 +11,13 @@ import SwiftUI
 
 struct CountryChartView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel: CountryChartViewModel = CountryChartViewModel(country: Country(flagImage: "", name: "", slug: ""))
+    @Environment(\.imageCache) var cache: ImageCache
+    @ObservedObject var viewModel: CountryChartViewModel
+    private let country: Country
 
-    init(viewModel: CountryChartViewModel) {
-        self.viewModel = viewModel
+    init(country: Country) {
+        self.country = country
+        self.viewModel = CountryChartViewModel(country: country)
     }
     
     var body: some View {
@@ -23,15 +26,18 @@ struct CountryChartView: View {
             VStack {
                 VStack {
                     HStack {
-                        URLImageView(url: viewModel.country.flagImage)
-                            .scaledToFit()
-                            .frame(width: 25, height: 25, alignment: .center)
-                            .padding(10)
+                        AsyncImage(urlString: viewModel.country.flagImage, placeholder: Text("..."), cache: self.cache)
+                            .frame(minWidth: 30, maxWidth: 30, minHeight: 20, maxHeight: 20)
+                            .aspectRatio(3 / 2, contentMode: .fit)
                         Text(viewModel.country.name)
                             .font(Font.system(size: 20))
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
-                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .center)
+                    }.frame(minHeight: 0, maxHeight: 40, alignment: .center)
+                    Text(viewModel.totalCountTitle)
+                        .font(Font.system(size: 30))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
 
                     VStack {
                         Picker(selection: Binding<Int>(
@@ -42,7 +48,7 @@ struct CountryChartView: View {
                             }
                         }.pickerStyle(SegmentedPickerStyle())
                             .padding([.leading, .trailing, .bottom], 10)
-                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 30, alignment: .center)
+                    }.frame(minHeight: 0, maxHeight: 30, alignment: .center)
 
                 }
                 VStack {
@@ -53,15 +59,17 @@ struct CountryChartView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color(hex:"2A685D"))
                                 .padding([.leading, .bottom], 40)
-                                .padding(.top, 60)
+                                .padding(.top, 30)
                             Spacer()
-                        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
+                        }.frame(minHeight: 0, maxHeight: 70, alignment: .center)
+                            .padding([.top, .bottom], 40)
                         LineView(data: viewModel.data.map { Double($0.cases) }, title: nil, legend: nil)
+                            .padding([.top, .bottom], 40)
                             .padding([.leading, .trailing], 10)
                         Spacer()
                     }
                     Spacer()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    .frame(minHeight: 0, maxHeight: .infinity, alignment: .center)
                     Button(action: {
                         self.viewModel.openURLInSafari()
                     }) {
@@ -103,7 +111,7 @@ struct CountryChartView_Previews: PreviewProvider {
 
     static var previews: some View {
         NavigationView {
-            CountryChartView(viewModel: viewModel)
+            CountryChartView(country: Country(flagImage: "https://raw.githubusercontent.com/hjnilsson/country-flags/master/png1000px/es.png", name: "Spain", slug: "spain"))
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CountryListView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = CountryListViewModel()
+    @ObservedObject var viewModel: CountryListViewModel
 
     init(viewModel: CountryListViewModel){
         self.viewModel = viewModel
@@ -19,16 +19,10 @@ struct CountryListView: View {
     }
 
     var body: some View {
-        VStack {
-            List {
-                ForEach(viewModel.countries, id: \.id) { country in
-                    NavigationLink(destination: CountryChartView(viewModel: CountryChartViewModel(country: country))) {
-                        CountryCardView(countryName: country.name, flagImage: country.flagImage)
-                            .padding(.bottom, 10)
-                    }
-                }
-            }
-        }.navigationBarBackButtonHidden(true)
+        List(viewModel.countries, id: \.id) { country in
+            CountryListRow(country: country)
+        }
+        .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -43,6 +37,17 @@ struct CountryListView: View {
             )
         .navigationBarTitle("Select a country", displayMode: .inline)
             .navigationBarColor(.white)
+    }
+}
+
+struct CountryListRow: View {
+    @State var country: Country
+
+    var body: some View {
+        NavigationLink(destination: LazyView { CountryChartView(country: self.country) }) {
+            CountryCardView(countryName: country.name, flagImage: country.flagImage)
+            .padding(.bottom, 10)
+        }
     }
 }
 

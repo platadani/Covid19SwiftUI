@@ -72,7 +72,7 @@ struct HomeView: View {
                     .sheet(isPresented: self.$showStayHomeDetail) {
                         RequirementDetailView(viewModel: RequirementDetailViewModel(requirement: .stayHome))
                     }
-                    NavigationLink(destination: CountryListView(viewModel: CountryListViewModel())) {
+                    NavigationLink(destination: LazyView { CountryListView(viewModel: CountryListViewModel()) }) {
                         CountriesCardView()
                     }
                 }
