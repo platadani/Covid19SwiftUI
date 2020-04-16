@@ -46,6 +46,7 @@
 		65E6FB1B2445C4220057CD44 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FB1A2445C4220057CD44 /* UIColorExtensions.swift */; };
 		65E6FB1D2445CB0A0057CD44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FB1C2445CB0A0057CD44 /* HomeViewModel.swift */; };
 		65E6FB1F2445CB3B0057CD44 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6FB1E2445CB3B0057CD44 /* Requirement.swift */; };
+		65EB65CB2448E38600F36E50 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB65CA2448E38600F36E50 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		65E6FB1A2445C4220057CD44 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		65E6FB1C2445CB0A0057CD44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		65E6FB1E2445CB3B0057CD44 /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
+		65EB65CA2448E38600F36E50 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				651D347224487A1B002D716B /* LazyView.swift */,
+				65EB65CA2448E38600F36E50 /* SearchBar.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				65C3CAD924470A890001C100 /* CountryDataResponse.swift in Sources */,
 				650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */,
 				65C3CADF24470B320001C100 /* ServerManager.swift in Sources */,
+				65EB65CB2448E38600F36E50 /* SearchBar.swift in Sources */,
 				65E6FB1F2445CB3B0057CD44 /* Requirement.swift in Sources */,
 				65C3CACE244702120001C100 /* AsyncImage.swift in Sources */,
 				65C3CAD4244708F30001C100 /* CountryChartView.swift in Sources */,
