@@ -18,6 +18,16 @@ struct CountryChartView: View {
     init(country: Country) {
         self.country = country
         self.viewModel = CountryChartViewModel(country: country)
+
+        UISegmentedControl.appearance().setTitleTextAttributes([
+            .foregroundColor: UIColor().from(hexString: "388A7B"),
+            .font: UIFont.systemFont(ofSize: 18, weight: .bold)
+        ], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 16, weight: .regular)
+        ], for: .normal)
+        UISegmentedControl.appearance().backgroundColor = UIColor().from(hexString: "388A7B")
     }
     
     var body: some View {
