@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		650819BC2445F677003F4AC2 /* RequirementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BB2445F677003F4AC2 /* RequirementDetailView.swift */; };
 		650819BE2445F6E4003F4AC2 /* RequirementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650819BD2445F6E4003F4AC2 /* RequirementDetailViewModel.swift */; };
+		6511CA6B24499ABB006FA7DF /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6511CA6A24499ABB006FA7DF /* SwiftUICharts */; };
 		651D347324487A1B002D716B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D347224487A1B002D716B /* LazyView.swift */; };
 		65423772244654D4007246F2 /* FullCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65423771244654D4007246F2 /* FullCardView.swift */; };
 		6542377424465512007246F2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542377324465512007246F2 /* CardView.swift */; };
@@ -23,7 +24,6 @@
 		65C3CAC92446FCD10001C100 /* CountriesServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAC82446FCD10001C100 /* CountriesServer.swift */; };
 		65C3CACC244701B10001C100 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CACB244701B10001C100 /* ImageLoader.swift */; };
 		65C3CACE244702120001C100 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CACD244702120001C100 /* AsyncImage.swift */; };
-		65C3CAD1244708DC0001C100 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 65C3CAD0244708DC0001C100 /* SwiftUICharts */; };
 		65C3CAD4244708F30001C100 /* CountryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAD3244708F30001C100 /* CountryChartView.swift */; };
 		65C3CAD72447097A0001C100 /* CountryChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAD62447097A0001C100 /* CountryChartViewModel.swift */; };
 		65C3CAD924470A890001C100 /* CountryDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3CAD824470A890001C100 /* CountryDataResponse.swift */; };
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C3CAD1244708DC0001C100 /* SwiftUICharts in Frameworks */,
+				6511CA6B24499ABB006FA7DF /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +340,7 @@
 			);
 			name = CovidUI;
 			packageProductDependencies = (
-				65C3CAD0244708DC0001C100 /* SwiftUICharts */,
+				6511CA6A24499ABB006FA7DF /* SwiftUICharts */,
 			);
 			productName = CovidUI;
 			productReference = 65E6FAF62445AF590057CD44 /* CovidUI.app */;
@@ -371,7 +371,7 @@
 			);
 			mainGroup = 65E6FAED2445AF590057CD44;
 			packageReferences = (
-				65C3CACF244708DC0001C100 /* XCRemoteSwiftPackageReference "ChartView" */,
+				6511CA6924499ABB006FA7DF /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 65E6FAF72445AF590057CD44 /* Products */;
 			projectDirPath = "";
@@ -632,20 +632,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		65C3CACF244708DC0001C100 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		6511CA6924499ABB006FA7DF /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
+			repositoryURL = "https://github.com/danielcev/ChartView";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
+				branch = LineViewCustomGradient;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		65C3CAD0244708DC0001C100 /* SwiftUICharts */ = {
+		6511CA6A24499ABB006FA7DF /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 65C3CACF244708DC0001C100 /* XCRemoteSwiftPackageReference "ChartView" */;
+			package = 6511CA6924499ABB006FA7DF /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

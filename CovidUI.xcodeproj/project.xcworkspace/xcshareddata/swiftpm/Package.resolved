@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/AppPear/ChartView",
+        "repositoryURL": "https://github.com/danielcev/ChartView",
         "state": {
-          "branch": null,
-          "revision": "c12c773af0b18be3abc30a5e39fc8370a6498502",
-          "version": "1.5.0"
+          "branch": "LineViewCustomGradient",
+          "revision": "32abc1ba56bff84b7c002c5ac05944ab376cef7a",
+          "version": null
         }
       }
     ]

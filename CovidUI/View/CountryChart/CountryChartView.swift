@@ -72,7 +72,7 @@ struct CountryChartView: View {
                             Spacer()
                         }.frame(minHeight: 0, maxHeight: 70, alignment: .center)
                         .padding([.top, .bottom], 40)
-                        LineView(data: viewModel.data.map { Double($0.cases) }, title: nil, legend: nil)
+                        LineView(data: viewModel.data.map { Double($0.cases) }, title: nil, legend: nil, style: ChartStyle(backgroundColor: .white, accentColor: .green, gradientColor: GradientColor(start: Color(hex: "388A7B"), end: Color(hex: "388A7B")), textColor: .green, legendTextColor: .green, dropShadowColor: .gray))
                             .padding([.top, .bottom], 40)
                             .padding([.leading, .trailing], 10)
                         Spacer()
